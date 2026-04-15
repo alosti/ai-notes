@@ -18,12 +18,13 @@ La mia esperienza con ARIA — un assistente di analisi finanziaria che ho costr
 
 ## Cosa trovi in questo repo
 
-| Contenuto | Descrizione |
-|---|---|
-| Corsi sull'AI | Percorsi strutturati su architetture, strumenti e pattern |
-| Interviste all'AI | Sessioni in cui ho esplorato temi specifici in forma dialogica |
-| Corso su MCP | Model Context Protocol: architettura, trasporti, primitivi |
-| Approfondimenti | Letture, analisi e riflessioni su temi specifici — senza ordine sequenziale |
+| Contenuto                                 | Descrizione                                                                                                    |
+| ----------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| Corsi sull'AI                             | Percorsi strutturati su architetture, strumenti e pattern                                                      |
+| Interviste all'AI                         | Sessioni in cui ho esplorato temi specifici in forma dialogica                                                 |
+| Corso su MCP                              | Model Context Protocol: architettura, trasporti, primitivi                                                     |
+| Machine Learning, Deep Learning e Trading | ML e DL applicati al trading: fondamenta, produzione e realtà dei mercati — per trader, non per data scientist |
+| Approfondimenti                           | Letture, analisi e riflessioni su temi specifici — senza ordine sequenziale                                    |
 
 ---
 
