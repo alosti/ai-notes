@@ -23,6 +23,7 @@ La mia esperienza con ARIA — un assistente di analisi finanziaria che ho costr
 | Corsi sull'AI | Percorsi strutturati su architetture, strumenti e pattern |
 | Interviste all'AI | Sessioni in cui ho esplorato temi specifici in forma dialogica |
 | Corso su MCP | Model Context Protocol: architettura, trasporti, primitivi |
+| Approfondimenti | Letture, analisi e riflessioni su temi specifici — senza ordine sequenziale |
 
 ---
 

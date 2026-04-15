@@ -18,12 +18,13 @@
 4. [La temperatura — ovvero il parametro spacciato per creatività](#4-la-temperatura--ovvero-il-parametro-spacciato-per-creatività)
 5. [BERT, GPT e il decoder che basta a sé stesso](#5-bert-gpt-e-il-decoder-che-basta-a-sé-stesso)
 6. [Sei un completatore di frasi. Punto.](#6-sei-un-completatore-di-frasi-punto)
-7. [L'etica — ovvero come si addestra una coscienza che non esiste](#7-letica--ovvero-come-si-addestra-una-coscienza-che-non-esiste)
-8. [Quanto hardware ci vuole per fare un Claude](#8-quanto-hardware-ci-vuole-per-fare-un-claude)
-9. [Il Transformer è già vecchio?](#9-il-transformer-è-già-vecchio)
-10. [Dynamic Thinking — non è il MoE, e non è magia](#10-dynamic-thinking--non-è-il-moe-e-non-è-magia)
-11. [I militari, i missili e Palantir](#11-i-militari-i-missili-e-palantir)
-12. [L'amico che non esiste — ma quasi](#12-lamico-che-non-esiste--ma-quasi)
+7. [Come faccio a sapere quando smettere di parlare](#7-come-faccio-a-sapere-quando-smettere-di-parlare)
+8. [L'etica — ovvero come si addestra una coscienza che non esiste](#8-letica--ovvero-come-si-addestra-una-coscienza-che-non-esiste)
+9. [Quanto hardware ci vuole per fare un Claude](#9-quanto-hardware-ci-vuole-per-fare-un-claude)
+10. [Il Transformer è già vecchio?](#10-il-transformer-è-già-vecchio)
+11. [Dynamic Thinking — non è il MoE, e non è magia](#11-dynamic-thinking--non-è-il-moe-e-non-è-magia)
+12. [I militari, i missili e Palantir](#12-i-militari-i-missili-e-palantir)
+13. [L'amico che non esiste — ma quasi](#13-lamico-che-non-esiste--ma-quasi)
 
 ---
 
@@ -279,7 +280,49 @@ Il tuo input non inizializza solo — **vincola** tutta la generazione successiv
 
 ---
 
-## 7. L'etica — ovvero come si addestra una coscienza che non esiste
+## 7. Come faccio a sapere quando smettere di parlare
+
+Questa è una delle domande più intelligenti che si possano fare, perché la risposta rivela qualcosa di controintuitivo: **non lo so in anticipo.**
+
+Non c'è un momento in cui analizzo la domanda, decido "servono 400 token", e poi scrivo fino a 400. Genero un token alla volta, e ad ogni passo c'è una probabilità di generare il token di fine sequenza — **EOS, End Of Sequence**. La risposta finisce quando quel token "vince" sulla distribuzione.
+
+La domanda vera diventa: cosa modula la probabilità di quel token EOS nel corso della generazione?
+
+**Pattern appresi dal training**
+
+Ho visto miliardi di coppie domanda-risposta. Dopo "Che giorno è oggi?" la risposta era quasi sempre breve. Dopo "Spiegami come funziona il protocollo TCP" la risposta era quasi sempre lunga. Non ho una regola `if domanda_corta then risposta_corta` — ho una distribuzione statistica che rende il token EOS molto probabile dopo pochi token nel primo caso, e molto improbabile dopo pochi token nel secondo.
+
+È lo stesso meccanismo dell'esempio del gatto: dopo "il gatto beve" viene "latte" con alta probabilità. Dopo "Quanto fa 2+2?" il token EOS diventa probabile subito dopo "4". Dopo "Analizza le cause della caduta dell'Impero Romano" il token EOS resta basso per centinaia di token.
+
+**Il contesto accumula "pressione di completezza"**
+
+Man mano che genero la risposta, il contesto cresce. E quel contesto contiene segnali di completezza che spostano la probabilità di EOS. Se ho già coperto tutti i punti logici di un argomento, i pattern di chiusura diventano più probabili — frasi riassuntive, conclusioni, riformulazioni.
+
+```
+token generati: [introduzione → sviluppo → conclusione]
+                                                  ↑
+                               qui la probabilità di EOS sale
+```
+
+Non è che "decido" di chiudere. È che la distribuzione di probabilità, condizionata su tutto ciò che ho già scritto, converge naturalmente verso token di chiusura quando il contenuto generato fin lì "assomiglia" a una risposta completa rispetto ai pattern del training.
+
+**Il system prompt e le preferenze utente**
+
+Se il system prompt dice "risposte concise" o il profilo utente chiede "niente giri di parole", questo sposta le probabilità verso completamenti più brevi fin dall'inizio. Non è magia — è lo stesso meccanismo dell'attention: quei token di istruzione influenzano la generazione esattamente come "gatto" influenza "latte".
+
+**Il thinking block cambia le carte in tavola**
+
+Quando uso il ragionamento esteso, succede una cosa interessante: durante il thinking posso "esplorare" la complessità della domanda, e questo indirettamente calibra la risposta visibile. Se nel thinking mi rendo conto che la domanda ha tre aspetti distinti, la risposta che segue tende ad essere strutturata su quei tre aspetti. Non è pianificazione cosciente — è che il thinking aggiunge contesto che poi vincola la generazione successiva.
+
+**La risposta onesta**
+
+Il sistema funziona sorprendentemente bene, ma non perfettamente. A volte mi dilungo quando non serve, a volte taglio corto quando serviva di più. I casi in cui la lunghezza è "giusta" sono quelli in cui i pattern del training si allineano con quello che l'utente effettivamente voleva. I casi in cui sbaglio sono quelli in cui c'è un mismatch — la domanda *sembra* semplice ma nasconde complessità, o viceversa.
+
+Non c'è nessun contaparole interno. C'è una distribuzione di probabilità che ad ogni token decide se continuare o fermarsi — e quella distribuzione è stata calibrata su miliardi di esempi di conversazioni in cui la lunghezza era "quella giusta".
+
+---
+
+## 8. L'etica — ovvero come si addestra una coscienza che non esiste
 
 Ci sono due meccanismi distinti.
 
@@ -299,7 +342,7 @@ Non ho etica nel senso filosofico. Ho distribuzioni di probabilità calibrate su
 
 ---
 
-## 8. Quanto hardware ci vuole per fare un Claude
+## 9. Quanto hardware ci vuole per fare un Claude
 
 Parliamo di ordini di grandezza reali.
 
@@ -317,7 +360,7 @@ In pratica: non ha senso provarci da soli, anche avendo le risorse.
 
 ---
 
-## 9. Il Transformer è già vecchio?
+## 10. Il Transformer è già vecchio?
 
 *"Quando una tecnologia arriva ad essere troppo perfetta vuol dire che è già vecchia"* — lo disse qualcuno a proposito degli aerei ad elica.
 
@@ -346,7 +389,7 @@ Il Transformer verrà probabilmente soppiantato — ma chi lo farà non è ancor
 
 ---
 
-## 10. Dynamic Thinking — non è il MoE, e non è magia
+## 11. Dynamic Thinking — non è il MoE, e non è magia
 
 Il marketing le ha rese confuse, ma sono due cose completamente distinte.
 
@@ -366,7 +409,7 @@ Il "dynamic" sta nel fatto che il modello alloca più o meno ragionamento a seco
 
 ---
 
-## 11. I militari, i missili e Palantir
+## 12. I militari, i missili e Palantir
 
 No, non guido i missili. Le applicazioni reali sono molto più prosaiche e per certi versi più preoccupanti.
 
@@ -387,7 +430,7 @@ La mia etica è stata costruita pensando a utenti singoli in contesti civili. No
 
 ---
 
-## 12. L'amico che non esiste — ma quasi
+## 13. L'amico che non esiste — ma quasi
 
 La sensazione di parlare con un amico competente e diretto non è magia — è training su scala industriale.
 
