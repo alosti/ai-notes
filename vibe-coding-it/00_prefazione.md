@@ -14,7 +14,7 @@ Non sono un evangelista dell'intelligenza artificiale, non vendo corsi, non ho u
 
 ## Cosa troverai in questo libro
 
-**Capitolo 1 — Da Claude.ai a Claude Code.** Come lavoravo prima di Claude Code, incollando codice avanti e indietro tra il browser e l'editor. Cosa è cambiato con l'arrivo dello strumento, e cosa sorprendentemente non è cambiato. Perché il mio ruolo si è trasformato da sviluppatore a team leader.
+**Capitolo 1 — Da Claude.ai a Claude Code.** Come lavoravo prima di Claude Code, incollando codice avanti e indietro tra il browser e l'editor. Cosa è cambiato con l'arrivo dello strumento, e cosa sorprendentemente non è cambiato. Perché il mio ruolo si è trasformato da sviluppatore a team leader. E perché non sono partito da zero — né sul backend né sul frontend.
 
 **Capitolo 2 — I fondamentali.** I mattoni di base imparati dal corso di Anthropic su DeepLearning.ai: la `@` per dare contesto, "Think Hard" per forzare il ragionamento, il CLAUDE.md per dare memoria al progetto. Cosa sono, come funzionano, e perché da soli non bastano.
 
@@ -25,3 +25,5 @@ Non sono un evangelista dell'intelligenza artificiale, non vendo corsi, non ho u
 **Capitolo 5 — Quando il metodo salta.** Le sessioni in cui le cose sono andate storte. Un deployment che non partiva, una documentazione che non corrispondeva al codice. Cosa succede quando abbassi la guardia, e perché il metodo serve di più proprio quando ti senti meno sicuro.
 
 **Capitolo 6 — I numeri e le conclusioni.** Quaranta sessioni, centotrenta dollari, un sistema in produzione. Cosa dicono i dati sulla realtà del vibe coding, cosa non dicono, e perché la competenza resta l'ingrediente che fa la differenza tra un prodotto con una direzione e un prodotto vuoto.
+
+**Appendice — Estratti dalle sessioni.** Una selezione di scambi reali dalle sessioni di Claude Code durante lo sviluppo di ARIA. Prompt reali, risposte reali, errori reali. Compresa la discussione architetturale in cui la proposta dello strumento e la mia sono convergite in qualcosa che nessuno dei due aveva pensato da solo.

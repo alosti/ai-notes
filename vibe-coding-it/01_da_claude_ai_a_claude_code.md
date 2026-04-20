@@ -28,6 +28,12 @@ La prima volta che ho usato la `@` per mettere un file nel contesto, la prima vo
 
 Questo è il punto che voglio chiarire subito, perché il resto del libro non ha senso senza: Claude Code non mi ha insegnato un metodo nuovo. Mi ha dato un ambiente in cui il metodo che avevo già poteva funzionare senza frizione. La differenza è enorme, ed è la ragione per cui il vibe coding funziona per chi ha già un modo di lavorare strutturato e fallisce per chi si aspetta che lo strumento faccia tutto.
 
+C'è un altro fatto che va detto subito, perché cambia la prospettiva su tutto quello che racconto dopo: non sono partito da zero. Il backend di ARIA non è nato da una cartella vuota — è nato dal codice che avevo sviluppato durante un corso sugli LLM, sempre lavorando con Claude. Quel codice aveva già una struttura, dei pattern, delle convenzioni. Quando ho aperto Claude Code sul progetto per la prima volta, lo strumento non si è trovato davanti il nulla — si è trovato davanti un progetto con le fondamenta già in piedi, e ha potuto costruire sopra quelle fondamenta.
+
+Lo stesso vale per il frontend. Non ho chiesto a Claude Code di creare un'applicazione Vue da zero. Sono partito da un mio starter project — un template base che uso come punto di partenza per i progetti frontend, con routing, struttura delle cartelle, configurazione e convenzioni già definite. Claude Code ha costruito l'interfaccia di ARIA sopra quella base, non nel vuoto.
+
+Questo non è un dettaglio. È un pezzo fondamentale della storia. Chi pensa di poter aprire un terminale, scrivere "fammi un'app di analisi finanziaria" e ottenere ARIA, si illude. Lo strumento ha bisogno di fondamenta su cui lavorare — e quelle fondamenta le devi costruire tu, o almeno averle costruite prima. Il vibe coding amplifica quello che c'è. Se non c'è niente, amplifica il niente.
+
 ## Cosa è cambiato davvero
 
 Se devo essere preciso, le cose che sono cambiate con il passaggio a Claude Code sono tre.
