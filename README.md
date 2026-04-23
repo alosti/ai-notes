@@ -1,5 +1,9 @@
 # Note di un percorso di studio sull'AI
 
+> Note personali di [Alessandro Osti](https://alosti.dev) — senior backend developer 
+> con 25+ anni di esperienza, che studia AI engineering per integrarlo nel proprio 
+> metodo di lavoro. Il percorso è documentato mentre succede, non a posteriori.
+
 ## Perché studiare con un'AI?
 
 Ho seguito molti corsi online negli anni. Il problema, quasi sempre, non era la qualità dei contenuti — era che il formato è rigido per definizione: stesso ritmo per tutti, stesso livello, stessi esempi. Chi è già avanti si annoia, chi ha un background diverso si perde, e nel mezzo c'è una quantità enorme di tempo che passa senza che tu stia davvero imparando qualcosa.
